@@ -18,6 +18,16 @@ function callApi(METHOD,URL,DATA,SUCCESS)
  xhttp.send(DATA);
  
 }
+function validate()
+{
+ var url="http://localhost:8080/captcha/validate/" + T1.value;
+ callApi("GET",url,"",getResponse);
+}
+
+function getResponse(res)
+{
+ alert(res);
+}
 function getCaptcha()
 {
  var url="http://localhost:8080/captcha/cap/5";
