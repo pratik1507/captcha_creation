@@ -57,4 +57,14 @@ public class CaptchaManager {
 		
 	   return bout.toByteArray();
 	}
+	
+	public String validateCaptcha(String txt)
+	 {
+	  Long id = (long) 1;
+	  CaptchaEntity tmp = cr.findById(id).get();
+	  if(txt.compareTo(tmp.getCaptchatext())==0)
+	   return "Validation Success";
+	  
+	  return "Validation Failed";
+	 }
 }
