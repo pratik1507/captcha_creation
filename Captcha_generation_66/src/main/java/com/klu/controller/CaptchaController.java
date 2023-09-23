@@ -22,4 +22,10 @@ public class CaptchaController {
 		String txt=cm.randomText(length);
 		return Base64.getEncoder().encodeToString(cm.getCaptcha(txt));
 	}
+	
+	@GetMapping("/validate/{txt}")
+	 public String validate(@PathVariable("txt") String txt)
+	 {
+	  return cm.validateCaptcha(txt);
+	 }
 }
